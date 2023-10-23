@@ -2,8 +2,16 @@
 //
 
 #include <iostream>
+#include <time.h> 
+#include <cstdlib>
+
+using namespace std;
 
 int main()
 {
-   std::cout << "Hello World!OPEN\n";
+	int Nomber = 0;
+	srand(time(nullptr));
+	Nomber = rand()%4;
+
+	std::cout << Nomber << "\n";
 }
