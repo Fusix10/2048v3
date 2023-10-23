@@ -7,9 +7,9 @@
 
 std::vector<std::vector<int>> TableCreator(int lengthTable) 
 {
-	std::vector<std::vector<int>> Table;
+	std::vector<std::vector<int>> Table(lengthTable);
 	int addeur;
-	for (addeur = 0; addeur < 4; addeur++)
+	for (addeur = 0; addeur < lengthTable; addeur++)
 	{
 		Table[addeur] = {0,0,0,0};
 	}
