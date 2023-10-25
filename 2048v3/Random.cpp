@@ -11,7 +11,7 @@ Random::Random()
 
 };
 
-int Random::MtdRan(int v) {
+int Random::MtdRanTwo(int v) {
 	
 	Pourcen = rand() % 10;
 	if (Pourcen >= 0 && Pourcen <= v) {
@@ -22,3 +22,5 @@ int Random::MtdRan(int v) {
 	}
 	return Nomber;
 };
+
+

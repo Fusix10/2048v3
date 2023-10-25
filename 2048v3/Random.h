@@ -7,5 +7,6 @@ public:
 	int Nomber;
 	int Pourcen;
 	Random();
-	int MtdRan(int v);
+	int MtdRanTwo(int v);
+	int MtdRan(int x);
 };
