@@ -23,4 +23,8 @@ int Random::MtdRanTwo(int v) {
 	return Nomber;
 };
 
+int Random::MtdRan(int x) {
+	NomberRandom = rand() % x;
 
+	return NomberRandom;
+};
