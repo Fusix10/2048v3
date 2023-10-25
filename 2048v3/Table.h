@@ -1,9 +1,17 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include <random>
+#include "Case.h";
+#include "Random.h";
+
 class Table 
 {
-	std::vector<std::vector<int>> Table2048;
+public:
+	std::vector<std::vector<Case>> Table2048;
 	Table(int size);
+	void draw();
+	void Dispatche();
+	Case a;
+	Random b;
+	void Start();
 };

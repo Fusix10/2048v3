@@ -4,22 +4,10 @@
 #include <iostream>
 #include <vector>
 
-
-std::vector<std::vector<int>> TableCreator(int lengthTable) 
-{
-	std::vector<std::vector<int>> Table(lengthTable);
-	int addeur;
-	for (addeur = 0; addeur < lengthTable; addeur++)
-	{
-		Table[addeur] = {0,0,0,0};
-	}
-	return(Table);
-}
+#include "Table.h"
 
 int main()
 {
-	int i;
-    std::cout << "taille du tableau: \n";
-    std::cin >> i;
-    TableCreator(i);
+	Table test(4);
+	test.draw();
 }

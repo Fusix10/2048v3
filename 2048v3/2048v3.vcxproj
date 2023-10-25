@@ -128,9 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="2048v3.cpp" />
+    <ClCompile Include="Case.cpp" />
     <ClCompile Include="Table.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Case.h" />
     <ClInclude Include="Table.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
