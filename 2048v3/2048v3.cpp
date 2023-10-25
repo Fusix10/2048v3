@@ -11,7 +11,7 @@ int main()
 	int Nomber;
 	srand(time(NULL));
 	Random a;
-	int NomberRandom = a.MtdRan(6);
+	int NomberRandom = a.MtdRanTwo(6);
 
 	std::cout << NomberRandom << "\n";
 	if (NomberRandom == 1) {
