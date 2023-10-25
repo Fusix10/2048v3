@@ -9,5 +9,5 @@ public:
 	int NomberRandom;
 	Random();
 	int MtdRanTwo(int v);
-	int MtdRan(int x);
+	int MtdRan(int iMax);
 };

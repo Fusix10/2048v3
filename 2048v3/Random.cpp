@@ -12,7 +12,7 @@ Random::Random()
 };
 
 int Random::MtdRanTwo(int v) {
-	
+	srand(time(NULL));
 	Pourcen = rand() % 10;
 	if (Pourcen >= 0 && Pourcen <= v) {
 		Nomber = 1;
@@ -23,8 +23,9 @@ int Random::MtdRanTwo(int v) {
 	return Nomber;
 };
 
-int Random::MtdRan(int x) {
-	NomberRandom = rand() % x;
+int Random::MtdRan(int iMax) {
+	srand(time(NULL));
+	NomberRandom = rand() % iMax;
 
 	return NomberRandom;
 };

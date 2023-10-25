@@ -9,7 +9,6 @@
 int main()
 {
 	int Nomber;
-	srand(time(NULL));
 	Random a;
 	int NomberRandom = a.MtdRanTwo(6);
 
