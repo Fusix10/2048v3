@@ -5,5 +5,11 @@
 
 int main()
 {
+	int r = true;
+	while (r) 
+	{
+
+	}
    std::cout << "Hello World!OPEN\n";
+
 }
