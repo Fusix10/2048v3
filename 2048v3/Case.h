@@ -3,8 +3,10 @@
 class Case
 {
 public:
-	int Nombre;
-
+	int Number;
+	int x;
+	int y;
 	Case();
 	void SetRandom();
+	int Fusion(int CaseTwoNumber);
 };

@@ -8,6 +8,11 @@
 
 int main()
 {
+	//on prepare le jeu
 	Table test(4);
+	for (int i = 0; i < 3; i++) {
+		test.Dispatche();
+	}
 	test.draw();
+
 }

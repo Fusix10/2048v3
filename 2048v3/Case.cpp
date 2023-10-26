@@ -3,7 +3,9 @@
 
 Case::Case()
 {
-	Nombre = 0;
+	Number = 0;
+	x = 0;
+	y = 0;
 };
 
 void Case::SetRandom() {
@@ -11,10 +13,20 @@ void Case::SetRandom() {
 	int result = a.MtdRanTwo(6);
 	if (result == 1)
 	{
-		Nombre = 2;
+		Number = 2;
 	}
 	if (result == 2)
 	{
-		Nombre = 4;
+		Number = 4;
 	}
 };
+
+int Case::Fusion(int CaseTwoNumber) {
+	if (Number == CaseTwoNumber) {
+		Number += CaseTwoNumber;
+		return 1;//sa a matcher
+	}
+	else {
+		return 2;//sa ne match pas
+	}
+}

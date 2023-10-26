@@ -7,6 +7,7 @@
 class Table 
 {
 public:
+	std::vector<Case> StorageCase;
 	std::vector<std::vector<Case>> Table2048;
 	Table(int size);
 	void draw();
@@ -14,4 +15,5 @@ public:
 	Case a;
 	Random b;
 	void Start();
+	void WhiteList();
 };
