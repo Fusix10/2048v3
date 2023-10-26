@@ -4,7 +4,7 @@ class Random
 {
 public:
 
-	int Nomber;
+	int Number;
 	int Pourcen;
 	int NomberRandom;
 	Random();

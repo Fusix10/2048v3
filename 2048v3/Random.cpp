@@ -1,13 +1,9 @@
 #include "Random.h"; 
-
 #include <iostream>
 #include <time.h>
 
 Random::Random()
 {
-	
-
-
 
 };
 
@@ -15,12 +11,12 @@ int Random::MtdRanTwo(int v) {
 	srand(time(NULL));
 	Pourcen = rand() % 10;
 	if (Pourcen >= 0 && Pourcen <= v) {
-		Nomber = 1;
+		Number = 1;
 	}
 	if (Pourcen >= v && Pourcen <= 9) {
-		Nomber = 2;
+		Number = 2;
 	}
-	return Nomber;
+	return Number;
 };
 
 int Random::MtdRan(int iMax) {
