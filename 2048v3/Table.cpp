@@ -1,6 +1,7 @@
 #include "Table.h";
 #include "Case.h";
 #include "Random.h";
+#include <time.h>
 
 Table::Table(int size)
 {
@@ -44,7 +45,6 @@ void Table::draw()
 	{
 		for (int j = 0; j < Table2048.size(); j++)
 		{
-			Table2048[i][j].Number = 0;
 			std::cout << "[" << Table2048[i][j].Number << "]";
 		}
 		std::cout << "\n";

@@ -3,12 +3,13 @@
 
 #include <iostream>
 #include <vector>
-
+#include <time.h>
 #include "Table.h"
 
 int main()
 {
 	//on prepare le jeu
+	srand(time(NULL));
 	Table test(4);
 	for (int i = 0; i < 3; i++) {
 		test.Dispatche();
