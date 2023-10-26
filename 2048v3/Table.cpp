@@ -66,9 +66,29 @@ int Table::Deplacement(int Direction) {
 	*  4 = en bas
 	*/
 	if (Direction == 1) {
-		for (int j = 0; j < Table2048.size(); j++) {
-			Table2048[0][j]
+		for (int i = 0; i < Table2048.size(); i++) {
+			for (int j = 0; j < Table2048.size(); j++) {
+				if (Table2048[j][i].Number == 0) {
+					continue;
+				}
+				else{
+					if (j == 0) {
+						continue;
+					}
+					else
+					{
+						if (Table2048[j - 1][i].Number != 0) {
+							continue;
+						}
+						else {
+							Table2048[j - 1][i].Number = Table2048[j][i].Number;
+							Table2048[j][i].Number = 0;
+						}
+					}
+				}
+			}
 		}
+		
 	}
 	else if (Direction == 2) {
 
