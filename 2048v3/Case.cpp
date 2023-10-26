@@ -1,5 +1,6 @@
 #include "Case.h";
 #include "Random.h";
+#include "Table.h";
 
 Case::Case()
 {

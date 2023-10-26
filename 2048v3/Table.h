@@ -14,6 +14,6 @@ public:
 	void Dispatche();
 	Case a;
 	Random b;
-	void Start();
 	void WhiteList();
+	int Deplacement(int Direction);
 };
