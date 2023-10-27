@@ -4,7 +4,7 @@
 #include "Case.h";
 #include "Random.h";
 
-class Table 
+class Table
 {
 public:
 	std::vector<Case> StorageCase;
@@ -14,6 +14,6 @@ public:
 	void Dispatche();
 	Case a;
 	Random b;
-	void Start();
 	void WhiteList();
+	int Deplacement(int Direction);
 };
