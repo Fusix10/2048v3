@@ -15,7 +15,6 @@
 
 
 void deplace() {
-
     Table test(1);
     bool badKey = true;
     while (badKey)
