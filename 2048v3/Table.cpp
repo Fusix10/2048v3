@@ -57,3 +57,49 @@ void Table::Dispatche()
 	Table2048[StorageCase[Who].x][StorageCase[Who].y].SetRandom();
 	WhiteList();
 }
+
+int Table::Deplacement(int Direction) {
+	/*
+	*  1 = a gauche
+	*  2 = en haut
+	*  3 = a droite
+	*  4 = en bas
+	*/
+	if (Direction == 1) {
+		for (int i = 0; i < Table2048.size(); i++) {
+			for (int j = 0; j < Table2048.size(); j++) {
+				if (Table2048[j][i].Number == 0) {
+					continue;
+				}
+				else {
+					if (j == 0) {
+						continue;
+					}
+					else
+					{
+						if (Table2048[j - 1][i].Number != 0) {
+							continue;
+						}
+						else {
+							Table2048[j - 1][i].Number = Table2048[j][i].Number;
+							Table2048[j][i].Number = 0;
+						}
+					}
+				}
+			}
+		}
+
+	}
+	else if (Direction == 2) {
+
+
+	}
+	else if (Direction == 3) {
+
+
+	}
+	else if (Direction == 4) {
+
+
+	}
+}
