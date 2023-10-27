@@ -16,7 +16,7 @@
 
 void deplace() {
 
-    Table test(4);
+    Table test(1);
     bool badKey = true;
     while (badKey)
     {
@@ -25,15 +25,19 @@ void deplace() {
         switch ((c = _getch()))
         {
         case KEY_LEFT:
+            std::cout << "gauche\n";
             test.Deplacement(1);
             break;
         case KEY_UP:
+            std::cout << "haut\n";
             test.Deplacement(2);
             break;
         case KEY_RIGHT:
+            std::cout << "droite\n";
             test.Deplacement(3);
             break;
         case KEY_DOWN:
+            std::cout << "bas\n";
             test.Deplacement(4);
             break;
 
