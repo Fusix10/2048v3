@@ -1,5 +1,4 @@
 #include "Commande.h"
-#include "Table.h"
 
 #include <conio.h>
 
@@ -20,19 +19,19 @@ void Commande::Mouvement() {
         int c = 0;
         switch ((c = _getch()))
         {
-        case KEY_UP:
-            std::cout << "haut\n";
-            break;
-        case KEY_DOWN:
-            std::cout << "bas\n";
-            break;
-        case KEY_RIGHT:
-            std::cout << "droit\n";
-            break;
         case KEY_LEFT:
             t.Deplacement(1);
-            std::cout << "gauche\n";
             break;
+        case KEY_UP:
+            t.Deplacement(2);
+            break;
+        case KEY_RIGHT:
+            t.Deplacement(3);
+            break;
+        case KEY_DOWN:
+            t.Deplacement(4);
+            break;
+        
         default:
             badKey = true;
             break;
