@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="2048v3.cpp" />
     <ClCompile Include="Case.cpp" />
+    <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Table.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Case.h" />
+    <ClInclude Include="Commande.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="Table.h" />
   </ItemGroup>
