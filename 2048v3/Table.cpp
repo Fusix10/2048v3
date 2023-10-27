@@ -1,10 +1,11 @@
 #include "Table.h";
 #include "Case.h";
 #include "Random.h";
+#include <time.h>
 
 Table::Table(int size)
 {
-	
+
 	std::cout << "taille du tableau: \n";
 	std::cout << "taille classique : 4 \n";
 	std::cin >> size;
@@ -21,7 +22,7 @@ Table::Table(int size)
 	WhiteList();
 };
 
-void Table::WhiteList() 
+void Table::WhiteList()
 {
 	StorageCase.clear();
 	StorageCase.resize(Table2048.size() * Table2048.size());
@@ -44,14 +45,13 @@ void Table::draw()
 	{
 		for (int j = 0; j < Table2048.size(); j++)
 		{
-			Table2048[i][j].Number = 0;
 			std::cout << "[" << Table2048[i][j].Number << "]";
 		}
 		std::cout << "\n";
 	}
 };
 
-void Table::Dispatche() 
+void Table::Dispatche()
 {
 	int Who = b.MtdRan(StorageCase.size());
 	Table2048[StorageCase[Who].x][StorageCase[Who].y].SetRandom();
@@ -66,8 +66,83 @@ int Table::Deplacement(int Direction) {
 	*  4 = en bas
 	*/
 	if (Direction == 1) {
+		for (int j = 0; j < Table2048.size(); j++) {
+			for (int i = 0; i < Table2048.size(); i++) {
+				if (Table2048[j][i].Number == 0) {
+					continue;
+				}
+				else {
+					if (i == 0) {
+						continue;
+					}
+					else
+					{
+						if (Table2048[j][i + 1].Number != 0) {
+							continue;
+						}
+						else {
+							Table2048[j][i + 1].Number = Table2048[j][i].Number;
+							Table2048[j][i].Number = 0;
+						}
+					}
+				}
+			}
+		}
+		return 0;
+	}
+	else if (Direction == 2) {
 		for (int i = 0; i < Table2048.size(); i++) {
 			for (int j = 0; j < Table2048.size(); j++) {
+				if (Table2048[j][i].Number == 0) {
+					continue;
+				}
+				else {
+					if (j == 0) {
+						continue;
+					}
+					else
+					{
+						if (Table2048[j + 1][i].Number != 0) {
+							continue;
+						}
+						else {
+							Table2048[j + 1][i].Number = Table2048[j][i].Number;
+							Table2048[j][i].Number = 0;
+						}
+					}
+				}
+			}
+		}
+		return 0;
+	}
+	else if (Direction == 3) {
+		for (int j = 0; j < Table2048.size(); j++) {
+			for (int i = Table2048.size(); i > 0; i--) {
+				if (Table2048[j][i].Number == 0) {
+					continue;
+				}
+				else {
+					if (i == 0) {
+						continue;
+					}
+					else
+					{
+						if (Table2048[j][i - 1].Number != 0) {
+							continue;
+						}
+						else {
+							Table2048[j][i - 1].Number = Table2048[j][i].Number;
+							Table2048[j][i].Number = 0;
+						}
+					}
+				}
+			}
+		}
+		return 0;
+	}
+	else if (Direction == 4) {
+		for (int i = 0; i < Table2048.size(); i++) {
+			for (int j = Table2048.size(); j > 0; j--) {
 				if (Table2048[j][i].Number == 0) {
 					continue;
 				}
@@ -88,19 +163,6 @@ int Table::Deplacement(int Direction) {
 				}
 			}
 		}
-
+		return 0;
 	}
-	else if (Direction == 2) {
-
-
-	}
-	else if (Direction == 3) {
-
-
-	}
-	else if (Direction == 4) {
-
-
-	}
-	return 0;
-}
+};
