@@ -274,7 +274,7 @@ void Table::Deplacement(int Direction) {
 	}
 };
 
-int Table::Fusion(int Direction) {
+void Table::Fusion(int Direction) {
 	if (Direction == 1) {
 		for (int i = 0; i < Table2048.size(); i++) {
 			for (int j = 0; j < Table2048.size(); j++) {

@@ -18,5 +18,5 @@ public:
 	Random b;
 	void WhiteList();
 	void Deplacement(int Direction);
-	int Fusion(int Direction);
+	void Fusion(int Direction);
 };

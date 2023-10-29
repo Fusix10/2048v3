@@ -1,15 +1,15 @@
 #include "deplace.h"
-
-#include "deplace.h"
 #include <iostream>
 #include <conio.h>
+#include "Table.h";
+#include "Condition.h";
 
 #define KEY_UP 72
 #define KEY_DOWN 80
 #define KEY_LEFT 75
 #define KEY_RIGHT 77
 
-deplace::deplace() {
+deplace::deplace(Table Tableau) {
     badKey = true;
     while (badKey)
     {
@@ -18,16 +18,28 @@ deplace::deplace() {
         switch ((c = _getch()))
         {
         case KEY_UP:
-            std::cout << "haut\n";
+            Tableau.Deplacement(2);
+            Tableau.Fusion(2);
+            Tableau.Deplacement(2);
+            VorD.Victory(Tableau.Table2048);
             break;
         case KEY_DOWN:
-            std::cout << "bas\n";
+            Tableau.Deplacement(4);
+            Tableau.Fusion(4);
+            Tableau.Deplacement(4);
+            VorD.Victory(Tableau.Table2048);
             break;
         case KEY_RIGHT:
-            std::cout << "droit\n";
+            Tableau.Deplacement(3);
+            Tableau.Fusion(3);
+            Tableau.Deplacement(3);
+            VorD.Victory(Tableau.Table2048);
             break;
         case KEY_LEFT:
-            std::cout << "gauche\n";
+            Tableau.Deplacement(1);
+            Tableau.Fusion(1);
+            Tableau.Deplacement(1);
+            VorD.Victory(Tableau.Table2048);
             break;
         default:
             badKey = true;

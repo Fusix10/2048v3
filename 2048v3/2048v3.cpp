@@ -5,6 +5,10 @@
 #include <vector>
 #include <time.h>
 #include "Table.h"
+#include <iostream>
+#include <conio.h>
+#include "deplace.h"
+
 int main()
 {
 	//on prepare le jeu
@@ -15,5 +19,10 @@ int main()
 	}
 	//test.Table2048[3][2].Number = 2048;
 	test.draw();
+	while (true)
+	{
+		deplace Moves(test);
+		test.draw();
+	}
 	
 }
