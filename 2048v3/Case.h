@@ -8,5 +8,4 @@ public:
 	int y;
 	Case();
 	void SetRandom();
-	int Fusion(int CaseTwoNumber);
 };

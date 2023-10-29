@@ -21,13 +21,3 @@ void Case::SetRandom() {
 		Number = 4;
 	}
 };
-
-int Case::Fusion(int CaseTwoNumber) {
-	if (Number == CaseTwoNumber) {
-		Number += CaseTwoNumber;
-		return 1;//sa a matcher
-	}
-	else {
-		return 2;//sa ne match pas
-	}
-}

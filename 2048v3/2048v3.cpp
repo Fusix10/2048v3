@@ -5,7 +5,6 @@
 #include <vector>
 #include <time.h>
 #include "Table.h"
-
 int main()
 {
 	//on prepare le jeu
@@ -14,6 +13,7 @@ int main()
 	for (int i = 0; i < 3; i++) {
 		test.Dispatche();
 	}
+	//test.Table2048[3][2].Number = 2048;
 	test.draw();
-
+	
 }
