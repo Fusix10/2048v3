@@ -5,4 +5,6 @@
 class deplace 
 {
 	deplace();
+	int c;
+	bool badKey;
 };
