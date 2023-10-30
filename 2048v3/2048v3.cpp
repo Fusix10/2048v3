@@ -14,15 +14,17 @@ int main()
 	//on prepare le jeu
 	srand(time(NULL));
 	Table test(4);
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 6; i++) {
 		test.Dispatche();
 	}
-	//test.Table2048[3][2].Number = 2048;
+	test.Table2048[0][0].Number = 4;
+	test.Table2048[0][1].Number = 2;
+	test.Table2048[0][2].Number = 2;
+	test.Table2048[0][3].Number = 2;
 	test.draw();
 	while (true)
 	{
-		deplace Moves(test);
+		Utils::Move(&test);
 		test.draw();
 	}
-	
 }

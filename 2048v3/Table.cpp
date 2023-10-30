@@ -60,6 +60,7 @@ void Table::draw()
 		std::cout << "[" << "j" << j << "]";;
 	}
 	SetConsoleTextAttribute(hConsole, 7);
+	std::cout << "\n";
 };
 
 void Table::Dispatche() 
@@ -91,18 +92,20 @@ void Table::Deplacement(int Direction) {
 						for(int w = j-1; w >= 0; --w){
 							if (w == 0) {
 								if (Table2048[i][w].Number == 0) {
-									if (w + 1 != j) {
-										Table2048[i][0].Number = Table2048[i][j].Number;
+										Table2048[i][w].Number = Table2048[i][j].Number;
 										Table2048[i][j].Number = 0;
 										break;
-									}
-									else {
-										break;
-									}
 								}
 								else {
-									std::cout << "[" << "Probleme: 01 voir code Table.cpp" << " ]";
-									//le code fonctionne pas donc si tu voie sa mec call me DIRECTE
+									for (int l = 1; l + w < j; l++) {
+										if (Table2048[i][w + l].Number == 0) {
+											Table2048[i][w + l].Number = Table2048[i][j].Number;
+											Table2048[i][j].Number = 0;
+											//std::cout << "[" << Table2048[i][w + 1].Number << " ]";
+											break;
+										}
+										continue;
+									}
 								}
 							}
 							else {
@@ -110,12 +113,14 @@ void Table::Deplacement(int Direction) {
 									continue;
 								}
 								else {
-									if (w + 1 != j) {
-										Table2048[i][w + 1].Number = Table2048[i][j].Number;
-										Table2048[i][j].Number = 0;
-									}
-									else {
-										break;
+									for (int l = 1; l + w < j; l++) {
+										if (Table2048[i][w + l].Number == 0) {
+											Table2048[i][w + l].Number = Table2048[i][j].Number;
+											Table2048[i][j].Number = 0;
+											//std::cout << "[" << Table2048[i][w + 1].Number << " ]";
+											break;
+										}
+										continue;
 									}
 								}
 							}
@@ -139,19 +144,21 @@ void Table::Deplacement(int Direction) {
 					{
 						for (int w = j - 1; w >= 0; --w) {
 							if (w == 0) {
-								if (Table2048[i][w].Number == 0) {
-									if (w + 1 != j) {
-										Table2048[0][i].Number = Table2048[j][i].Number;
-										Table2048[j][i].Number = 0;
-										break;
-									}
-									else {
-										break;
-									}
+								if (Table2048[w][i].Number == 0) {
+									Table2048[w][i].Number = Table2048[j][i].Number;
+									Table2048[j][i].Number = 0;
+									break;
 								}
 								else {
-									std::cout << "[" << "Probleme: 01 voir code Table.cpp" << " ]";
-									//le code fonctionne pas donc si tu voie sa mec call me DIRECTE
+									for (int l = 1; l + w < j; l++) {
+										if (Table2048[w + l][i].Number == 0) {
+											Table2048[w + l][i].Number = Table2048[j][i].Number;
+											Table2048[j][i].Number = 0;
+											std::cout << "[" << Table2048[i][w + 1].Number << " ] \n";
+											break;
+										}
+										continue;
+									}
 								}
 							}
 							else {
@@ -159,12 +166,14 @@ void Table::Deplacement(int Direction) {
 									continue;
 								}
 								else {
-									if (w + 1 != j) {
-										Table2048[w + 1][i].Number = Table2048[j][i].Number;
-										Table2048[j][i].Number = 0;
-									}
-									else {
-										break;
+									for (int l = 1; l + w < j; l++) {
+										if (Table2048[w + l][i].Number == 0) {
+											Table2048[w + l][i].Number = Table2048[j][i].Number;
+											Table2048[j][i].Number = 0;
+											std::cout << "[" << Table2048[i][w + 1].Number << " ] \n";
+											break;
+										}
+										continue;
 									}
 								}
 							}
@@ -187,20 +196,19 @@ void Table::Deplacement(int Direction) {
 					else
 					{
 						for (int w = j + 1; w < Table2048.size(); w++) {
-							if (w == Table2048.size()) {
+							if (w == Table2048.size() - 1) {
 								if (Table2048[i][w].Number == 0) {
-									if (w - 1 != j) {
-										Table2048[i][0].Number = Table2048[i][j].Number;
+									Table2048[i][w].Number = Table2048[i][j].Number;
+									Table2048[i][j].Number = 0;
+									break;
+								}
+								else {
+									if (Table2048[i][w-1].Number == 0) {
+										Table2048[i][w-1].Number = Table2048[i][j].Number;
 										Table2048[i][j].Number = 0;
 										break;
 									}
-									else {
-										break;
-									}
-								}
-								else {
-									std::cout << "[" << "Probleme: 01 voir code Table.cpp" << " ]";
-									//le code fonctionne pas donc si tu voie sa mec call me DIRECTE
+									continue;
 								}
 							}
 							else {
@@ -208,12 +216,21 @@ void Table::Deplacement(int Direction) {
 									continue;
 								}
 								else {
-									if (w - 1 != j) {
-										Table2048[i][w - 1].Number = Table2048[i][j].Number;
-										Table2048[i][j].Number = 0;
-									}
-									else {
-										break;
+									for (int l = 1; l + w < j; l++) {
+										if (Table2048[i][w + l].Number == 0) {
+											Table2048[i][w + l].Number = Table2048[i][j].Number;
+											Table2048[i][j].Number = 0;
+											std::cout << "[" << Table2048[i][w + l].Number << " ] \n";
+											break;
+										}
+										else {
+											if (Table2048[i][w - 1].Number == 0) {
+												Table2048[i][w - 1].Number = Table2048[i][j].Number;
+												Table2048[i][j].Number = 0;
+												break;
+											}
+										}
+										continue;
 									}
 								}
 							}
@@ -297,7 +314,7 @@ void Table::Fusion(int Direction) {
 			for (int j = 0; j < Table2048.size(); j++) {
 				if (j != 0) {
 					if (Table2048[j][i].Number != 0) {
-						if (Table2048[j - 1][i].Number == Table2048[j][j].Number) {
+						if (Table2048[j - 1][i].Number == Table2048[j][i].Number) {
 							Table2048[j - 1][i].Number += Table2048[j][i].Number;
 							Table2048[j][i].Number = 0;
 						}
@@ -312,7 +329,7 @@ void Table::Fusion(int Direction) {
 	else if (Direction == 3) {
 		for (int i = 0; i < Table2048.size(); i++) {
 			for (int j = Table2048.size() - 1; j >= 0; --j) {
-				if (j != Table2048.size() + 1) {
+				if (j != Table2048.size() - 1) {
 					if (Table2048[i][j].Number != 0) {
 						if (Table2048[i][j + 1].Number == Table2048[i][j].Number) {
 							Table2048[i][j + 1].Number += Table2048[i][j].Number;
@@ -329,11 +346,16 @@ void Table::Fusion(int Direction) {
 	else if (Direction == 4) {
 		for (int i = 0; i < Table2048.size(); i++) {
 			for (int j = Table2048.size() - 1; j >= 0; --j) {
-				if (j != Table2048.size() + 1) {
+				if (j != Table2048.size() - 1) {
 					if (Table2048[j][i].Number != 0) {
-						if (Table2048[j + 1][i].Number == Table2048[j + 1][i].Number) {
+						if (Table2048[j + 1][i].Number == Table2048[j][i].Number) {
+							std::cout << "j+1i2: " << Table2048[j + 1][i].Number;
 							Table2048[j + 1][i].Number += Table2048[j + 1][i].Number;
+							std::cout << "ji1: " << Table2048[j][i].Number;
 							Table2048[j][i].Number = 0;
+							std::cout << "ji2: "<< Table2048[j][i].Number;
+							std::cout << "j+1i2: " << Table2048[j + 1][i].Number;
+
 						}
 					}
 				}

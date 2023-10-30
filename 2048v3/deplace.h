@@ -7,11 +7,7 @@
 #include <iostream>
 #include "Condition.h"
 
-class deplace 
+namespace Utils
 {
-public:
-	Condition VorD;
-	deplace(Table Tableau);
-	int c;
-	bool badKey;
+	void Move(Table* Tableau);
 };
