@@ -20,31 +20,7 @@ int Condition::Victory(std::vector<std::vector<Case>> Table2048) {
 			for (int j = 0; j < Table2048.size(); j++)
 			{
 				int test = 0;
-				test = Checkdefeat(Table2048, i , j , i - 1, j - 1);
-				if (test == 1) {
-					return 0;// game continue pas finie
-				}
-				test = Checkdefeat(Table2048, i , j , i - 1, j);
-				if (test == 1) {
-					return 0;// game continue pas finie
-				}
-				test = Checkdefeat(Table2048, i , j , i - 1, j + 1);
-				if (test == 1) {
-					return 0;// game continue pas finie
-				}
-				test = Checkdefeat(Table2048, i , j , i , j - 1);
-				if (test == 1) {
-					return 0;// game continue pas finie
-				}
-				test = Checkdefeat(Table2048, i , j , i , j + 1);
-				if (test == 1) {
-					return 0;// game continue pas finie
-				}
-				test = Checkdefeat(Table2048, i , j , i + 1, j - 1);
-				if (test == 1) {
-					return 0;// game continue pas finie
-				}
-				test = Checkdefeat(Table2048, i , j , i + 1, j + 1);
+				test = Checkdefeat(Table2048, i , j , i, j + 1);
 				if (test == 1) {
 					return 0;// game continue pas finie
 				}

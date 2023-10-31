@@ -11,6 +11,7 @@ public:
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	std::vector<Case> StorageCase;
 	std::vector<std::vector<Case>> Table2048;
+	Table(const std::vector<std::vector<int>>& config);
 	Table(int size);
 	void draw();
 	void Dispatche();

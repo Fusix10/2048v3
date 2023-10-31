@@ -9,22 +9,46 @@
 #include <conio.h>
 #include "deplace.h"
 
+#include <vector>
+
 int main()
 {
 	//on prepare le jeu
 	srand(time(NULL));
+	int Gameset = 0;
+	/*std::vector< std::vector<int>> config =
+	{
+		{2,4,2,4},
+		{4,2,4,2},
+		{2,4,2,4},
+		{4,2,4,2},
+	};*/
+	
+	//Table test(config);
+
 	Table test(4);
-	for (int i = 0; i < 6; i++) {
+	
+	for (int i = 0; i < 3; i++) {
 		test.Dispatche();
 	}
-	test.Table2048[0][0].Number = 4;
-	test.Table2048[0][1].Number = 2;
-	test.Table2048[0][2].Number = 2;
-	test.Table2048[0][3].Number = 2;
 	test.draw();
+
 	while (true)
 	{
-		Utils::Move(&test);
+		
+		Gameset = Utils::Move(&test);
+		
+		if (Gameset == 1) {
+			std::cout << "YOU LOSE \n";
+			return 0;
+		}
+		else if (Gameset == 2) {
+			std::cout << "you... you... YOU WIIINNN ?????!!!!!! \n";
+			return 0;
+		}
+		test.Dispatche();
 		test.draw();
+		
 	}
+	return 0;
 }
