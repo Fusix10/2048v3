@@ -8,9 +8,14 @@
 #include <iostream>
 #include <conio.h>
 #include "deplace.h"
+#include "Window.h"
 
-int main()
+int main(int argc, char** argv)
 {
+	Window* window = new Window;
+	window->Create();
+	window->Rectan(0, 0);
+
 	//on prepare le jeu
 	srand(time(NULL));
 	Table test(4);
@@ -28,3 +33,4 @@ int main()
 		test.draw();
 	}
 }
+
