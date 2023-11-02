@@ -16,7 +16,12 @@ int main(int argc, char** argv)
 {
 	Window* window = new Window;
 	window->Create();
-	window->Rectan(0, 0);
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			window->Rectan(i, j);
+		}
+	} 
+
 
 	//on prepare le jeu
 	srand(time(NULL));
