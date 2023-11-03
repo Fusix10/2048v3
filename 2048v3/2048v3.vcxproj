@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\lsaintomer\Documents\GitHub\2048v3\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\lsaintomer\Documents\GitHub\2048v3\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -138,7 +138,6 @@
     <ClCompile Include="deplace.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Table.cpp" />
-    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Case.h" />
@@ -146,7 +145,9 @@
     <ClInclude Include="deplace.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="Table.h" />
-    <ClInclude Include="Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Desktop\Cube.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
